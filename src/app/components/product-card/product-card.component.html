@@ -1,0 +1,29 @@
+
+<div class="product-card" (click)="cardClick.emit(product.id)">
+  @if (product.discountpercent) {
+    <div class="discount-badge">{{ product.discountpercent }}% OFF</div>
+  }
+  
+  <div class="product-image">
+    <img [src]="product.image" [alt]="product.name">
+  </div>
+  
+  <div class="product-info">
+    <h3 class="product-name">{{ product.name }}</h3>
+    
+    <div class="rating">
+      @for (star of getStars(product.rate); track $index) {
+        <span [class.filled]="star === 1">⭐</span>
+      }
+      <span class="rating-text">{{ product.rate }}/{{ product.totalRate }}</span>
+    </div>
+    
+    <div class="price-section">
+      <span class="price">\${{ product.price }}</span>
+    </div>
+    
+    <button class="add-to-cart-btn" (click)="addToCart($event)">
+      Add to Cart
+    </button>
+  </div>
+</div>

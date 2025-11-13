@@ -1,0 +1,36 @@
+<header>
+    <div class="container">
+        <a routerLink="/" class="logo">
+            <div class="bg-color">
+                    <img src="../../../assets/images/shophubicon.svg" alt="shophubicon" class="imgdecor">
+                </div>
+           
+        </a>
+
+        <nav>
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/categories" routerLinkActive="active">Categories</a></li>
+                <li><a routerLink="/deals" routerLinkActive="active">Deals</a></li>
+                <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            </ul>
+        </nav>
+
+        <div class="right-section">
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input 
+                    type="text" 
+                    placeholder="Search products..."
+                    (input)="onSearch($event)">
+            </div>
+
+            <div class="cart-icon" routerLink="/cart">
+                🛒
+                @if (cartService.cartCount > 0) {
+                    <span class="cart-badge">{{ cartService.cartCount }}</span>
+                }
+            </div>
+        </div>
+    </div>
+</header>

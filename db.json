@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Premium Wireless Headphones",
+      "rate": 4.5,
+      "totalRate": 5,
+      "price": 69.99,
+      "discountpercent": 30,
+      "image": "assets/image/Premium Wireless Headphones.svg"
+    },
+    {
+      "id": "2",
+      "name": "Smart Fitness Watch Pro",
+      "rate": 4,
+      "totalRate": 5,
+      "price": 199.99,
+      "image": "assets/image/Smart Fitness Watch Pro.svg"
+    },
+    {
+      "id": "3",
+      "name": "Fast Wireless Charger",
+      "rate": 4.5,
+      "totalRate": 5,
+      "price": 39.99,
+      "image": "assets/image/Fast Wireless Charger.svg"
+    },
+    {
+      "id": "4",
+      "name": "Waterproof Bluetooth Speaker",
+      "rate": 4.5,
+      "totalRate": 5,
+      "price": 49.99,
+      "discountpercent": 15,
+      "image": "assets/image/Waterproof Bluetooth Speaker.svg"
+    },
+    {
+      "id": "5",
+      "name": "UltraBook Pro 15\"",
+      "rate": 5,
+      "totalRate": 5,
+      "price": 1299.99,
+      "image": "assets/image/UltraBook Pro 15.svg"
+    },
+    {
+      "id": "6",
+      "name": "RGB Mechanical Keyboard",
+      "rate": 4,
+      "totalRate": 5,
+      "price": 129.99,
+      "image": "assets/image/RGB Mechanical Keyboard.svg"
+    }
+  ]
+}
