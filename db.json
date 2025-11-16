@@ -2,53 +2,146 @@
   "products": [
     {
       "id": "1",
-      "name": "Premium Wireless Headphones",
+      "name": "Premium Wireless Bluetooth Headphones",
+      "model": "WH-1000XM4",
       "rate": 4.5,
       "totalRate": 5,
+      "reviews": 124,
       "price": 69.99,
+      "originalPrice": 90.00,
       "discountpercent": 30,
-      "image": "assets/image/Premium Wireless Headphones.svg"
+      "image": "assets/image/Premium Wireless Headphones.svg",
+      "images": [
+        "assets/image/Premium Wireless Headphones.svg",
+        "assets/image/Premium Wireless Headphones.svg",
+        "assets/image/Premium Wireless Headphones.svg",
+        "assets/image/Premium Wireless Headphones.svg"
+      ],
+      "description": "Experience unparalleled sound quality with our Premium Wireless Bluetooth Headphones. Featuring industry-leading noise cancellation technology, these headphones deliver crisp, clear audio whether you're listening to music, taking calls, or watching movies.\n\nThe advanced 40mm drivers produce rich, detailed sound across all frequencies, while the comfortable over-ear design ensures you can wear them for hours without discomfort. With up to 30 hours of battery life and quick charge capabilities, these headphones are perfect for your busy lifestyle.\n\nBuilt with premium materials and available in multiple colors, these headphones combine style with substance to deliver an unparalleled listening experience.",
+      "features": [
+        "Active Noise Cancellation",
+        "30-hour battery life",
+        "Quick charge: 3 min = 3 hours",
+        "Premium comfort design",
+        "Multipoint Bluetooth connectivity"
+      ],
+      "stock": 15
     },
     {
       "id": "2",
       "name": "Smart Fitness Watch Pro",
+      "model": "SFW-PRO-2024",
       "rate": 4,
       "totalRate": 5,
+      "reviews": 89,
       "price": 199.99,
-      "image": "assets/image/Smart Fitness Watch Pro.svg"
+      "image": "assets/image/Smart Fitness Watch Pro.svg",
+      "images": [
+        "assets/image/Smart Fitness Watch Pro.svg",
+        "assets/image/Smart Fitness Watch Pro.svg"
+      ],
+      "description": "Track your fitness goals with precision using our Smart Fitness Watch Pro. Monitor your heart rate, steps, calories, and sleep patterns with advanced sensors.",
+      "features": [
+        "Heart rate monitoring",
+        "GPS tracking",
+        "Water resistant IP68",
+        "7-day battery life",
+        "Sleep tracking"
+      ],
+      "stock": 25
     },
     {
       "id": "3",
       "name": "Fast Wireless Charger",
+      "model": "FWC-15W",
       "rate": 4.5,
       "totalRate": 5,
+      "reviews": 67,
       "price": 39.99,
-      "image": "assets/image/Fast Wireless Charger.svg"
+      "image": "assets/image/Fast Wireless Charger.svg",
+      "images": [
+        "assets/image/Fast Wireless Charger.svg"
+      ],
+      "description": "Charge your devices quickly and conveniently with our 15W Fast Wireless Charger. Compatible with all Qi-enabled devices.",
+      "features": [
+        "15W fast charging",
+        "Universal compatibility",
+        "LED indicator",
+        "Overcharge protection",
+        "Slim design"
+      ],
+      "stock": 50
     },
     {
       "id": "4",
       "name": "Waterproof Bluetooth Speaker",
+      "model": "WBS-X1",
       "rate": 4.5,
       "totalRate": 5,
+      "reviews": 156,
       "price": 49.99,
+      "originalPrice": 59.99,
       "discountpercent": 15,
-      "image": "assets/image/Waterproof Bluetooth Speaker.svg"
+      "image": "assets/image/Waterproof Bluetooth Speaker.svg",
+      "images": [
+        "assets/image/Waterproof Bluetooth Speaker.svg",
+        "assets/image/Waterproof Bluetooth Speaker.svg"
+      ],
+      "description": "Take your music anywhere with this waterproof Bluetooth speaker. Perfect for outdoor adventures, beach trips, or poolside relaxation.",
+      "features": [
+        "IPX7 waterproof rating",
+        "20-hour battery life",
+        "360° sound",
+        "Rugged design",
+        "Built-in microphone"
+      ],
+      "stock": 30
     },
     {
       "id": "5",
       "name": "UltraBook Pro 15\"",
+      "model": "UBP-15-I7",
       "rate": 5,
       "totalRate": 5,
+      "reviews": 203,
       "price": 1299.99,
-      "image": "assets/image/UltraBook Pro 15.svg"
+      "image": "assets/image/UltraBook Pro 15.svg",
+      "images": [
+        "assets/image/UltraBook Pro 15.svg",
+        "assets/image/UltraBook Pro 15.svg"
+      ],
+      "description": "Powerful performance meets sleek design. The UltraBook Pro 15 features the latest Intel processor and stunning 4K display.",
+      "features": [
+        "Intel Core i7 processor",
+        "16GB RAM",
+        "512GB SSD",
+        "15.6\" 4K display",
+        "10-hour battery life"
+      ],
+      "stock": 10
     },
     {
       "id": "6",
       "name": "RGB Mechanical Keyboard",
+      "model": "RMK-RGB-PRO",
       "rate": 4,
       "totalRate": 5,
+      "reviews": 78,
       "price": 129.99,
-      "image": "assets/image/RGB Mechanical Keyboard.svg"
+      "image": "assets/image/RGB Mechanical Keyboard.svg",
+      "images": [
+        "assets/image/RGB Mechanical Keyboard.svg",
+        "assets/image/RGB Mechanical Keyboard.svg"
+      ],
+      "description": "Elevate your gaming experience with this premium RGB mechanical keyboard featuring customizable lighting and responsive switches.",
+      "features": [
+        "Mechanical switches",
+        "RGB backlighting",
+        "Programmable keys",
+        "Aluminum frame",
+        "Anti-ghosting"
+      ],
+      "stock": 25
     }
   ]
 }

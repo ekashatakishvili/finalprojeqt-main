@@ -27,9 +27,9 @@
 
             <div class="cart-icon" routerLink="/cart">
                 🛒
-                @if (cartService.cartCount > 0) {
-                    <span class="cart-badge">{{ cartService.cartCount }}</span>
-                }
+               @if (cartService.cartCount() > 0) {
+    <span class="cart-badge">{{ cartService.cartCount() }}</span>
+}
             </div>
         </div>
     </div>

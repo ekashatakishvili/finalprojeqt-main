@@ -1,0 +1,109 @@
+<div class="product-detail-container">
+  @if (loading) {
+    <div class="loading">Loading...</div>
+  } @else if (product) {
+    <div class="product-detail">
+      <!-- Left Side - Images -->
+      <div class="product-images-section">
+        <div class="main-image-wrapper">
+          @if (product.discountpercent) {
+            <div class="discount-badge">{{ product.discountpercent }}% OFF</div>
+          }
+          <div class="main-image">
+            <img [src]="selectedImage" [alt]="product.name">
+          </div>
+        </div>
+        
+        @if (product.images && product.images.length > 1) {
+          <div class="thumbnail-images">
+            @for (img of product.images; track $index) {
+              <div 
+                class="thumbnail" 
+                [class.active]="selectedImage === img"
+                (click)="selectImage(img)">
+                <img [src]="img" [alt]="product.name">
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Right Side - Product Info -->
+      <div class="product-info-section">
+        <h1 class="product-name">{{ product.name }}</h1>
+        
+        @if (product.model) {
+          <p class="product-model">Model: {{ product.model }} | SKU: {{ product.id }}-{{ product.model }}</p>
+        }
+
+        <div class="rating-reviews">
+          <div class="stars">
+            @for (star of getStars(product.rate); track $index) {
+              <span [class.filled]="star === 1">⭐</span>
+            }
+          </div>
+          <span class="rating-number">({{ product.rate }})</span>
+          @if (product.reviews) {
+            <span class="reviews-count">{{ product.reviews }} reviews</span>
+          }
+        </div>
+
+        <div class="price-container">
+          <div class="price-row">
+            <span class="current-price">\${{ product.price }}</span>
+            @if (product.originalPrice) {
+              <span class="original-price">\${{ product.originalPrice }}</span>
+            }
+          </div>
+          @if (product.originalPrice) {
+            <p class="tax-info">Tax included. <a href="#">Shipping</a> calculated at checkout</p>
+          }
+        </div>
+
+        @if (product.features && product.features.length > 0) {
+          <div class="features-section">
+            <h3 class="section-title">Key Features</h3>
+            <ul class="features-list">
+              @for (feature of product.features; track $index) {
+                <li>✓ {{ feature }}</li>
+              }
+            </ul>
+          </div>
+        }
+
+        <div class="actions">
+          <button 
+            class="btn-add-to-cart" 
+            (click)="addToCart()"
+            [disabled]="product.stock === 0">
+            🛒 Add to Cart
+          </button>
+          <button 
+            class="btn-buy-now" 
+            (click)="buyNow()"
+            [disabled]="product.stock === 0">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description Section (Full Width) -->
+    @if (product.description) {
+      <div class="description-container">
+        <div class="description-tabs">
+          <button class="tab active">Description</button>
+        </div>
+        <div class="description-content">
+          <h2>Product Description</h2>
+          <p>{{ product.description }}</p>
+        </div>
+      </div>
+    }
+  } @else {
+    <div class="not-found">
+      <h2>Product not found</h2>
+      <p>The product you're looking for doesn't exist.</p>
+    </div>
+  }
+</div>
