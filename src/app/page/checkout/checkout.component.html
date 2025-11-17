@@ -1,1 +1,166 @@
-<p>checkout works!</p>
+<div class="checkout-container">
+  <h1 class="page-title">Checkout</h1>
+
+  @if (cartService.cartItems().length === 0) {
+    <div class="empty-message">
+      <p>Your cart is empty. Please add items before checkout.</p>
+      <button class="btn-back" routerLink="/products">Go to Products</button>
+    </div>
+  } @else {
+    <div class="checkout-content">
+      <!-- Left Side - Form -->
+      <div class="checkout-form-section">
+        <h2 class="section-title">Shipping Information</h2>
+
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input 
+                type="text" 
+                id="firstName" 
+                formControlName="firstName"
+                [class.error]="f['firstName'].invalid && f['firstName'].touched">
+              @if (f['firstName'].invalid && f['firstName'].touched) {
+                <span class="error-message">First name is required (min 2 characters)</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input 
+                type="text" 
+                id="lastName" 
+                formControlName="lastName"
+                [class.error]="f['lastName'].invalid && f['lastName'].touched">
+              @if (f['lastName'].invalid && f['lastName'].touched) {
+                <span class="error-message">Last name is required (min 2 characters)</span>
+              }
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email"
+                [class.error]="f['email'].invalid && f['email'].touched">
+              @if (f['email'].invalid && f['email'].touched) {
+                <span class="error-message">Valid email is required</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                formControlName="phone"
+                placeholder="599123456"
+                [class.error]="f['phone'].invalid && f['phone'].touched">
+              @if (f['phone'].invalid && f['phone'].touched) {
+                <span class="error-message">Valid phone number is required (9-15 digits)</span>
+              }
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address *</label>
+            <input 
+              type="text" 
+              id="address" 
+              formControlName="address"
+              [class.error]="f['address'].invalid && f['address'].touched">
+            @if (f['address'].invalid && f['address'].touched) {
+              <span class="error-message">Address is required (min 5 characters)</span>
+            }
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City *</label>
+              <input 
+                type="text" 
+                id="city" 
+                formControlName="city"
+                [class.error]="f['city'].invalid && f['city'].touched">
+              @if (f['city'].invalid && f['city'].touched) {
+                <span class="error-message">City is required</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="zipCode">Zip Code *</label>
+              <input 
+                type="text" 
+                id="zipCode" 
+                formControlName="zipCode"
+                placeholder="0101"
+                [class.error]="f['zipCode'].invalid && f['zipCode'].touched">
+              @if (f['zipCode'].invalid && f['zipCode'].touched) {
+                <span class="error-message">Valid zip code is required (4-10 digits)</span>
+              }
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button 
+              type="button" 
+              class="btn-cancel" 
+              (click)="cancelOrder()"
+              [disabled]="isSubmitting">
+              Cancel
+            </button>
+            <button 
+              type="submit" 
+              class="btn-submit"
+              [disabled]="isSubmitting">
+              {{ isSubmitting ? 'Processing...' : 'Place Order' }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Side - Order Summary -->
+      <div class="order-summary-section">
+        <h2 class="section-title">Order Summary</h2>
+
+        <div class="order-items">
+          @for (item of cartService.cartItems(); track item.product.id) {
+            <div class="summary-item">
+              <div class="item-image">
+                <img [src]="item.product.image" [alt]="item.product.name">
+              </div>
+              <div class="item-info">
+                <p class="item-name">{{ item.product.name }}</p>
+                <p class="item-quantity">Qty: {{ item.quantity }}</p>
+              </div>
+              <p class="item-price">\${{ (item.product.price * item.quantity).toFixed(2) }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="summary-totals">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>\${{ cartService.subtotal().toFixed(2) }}</span>
+          </div>
+
+          @if (cartService.totalDiscount() > 0) {
+            <div class="summary-row discount">
+              <span>Discount</span>
+              <span class="discount-value">-\${{ cartService.totalDiscount().toFixed(2) }}</span>
+            </div>
+          }
+
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="total-value">\${{ cartService.total().toFixed(2) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

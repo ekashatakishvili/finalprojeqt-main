@@ -143,12 +143,15 @@
       ],
       "stock": 25
     }
-  ]
-  
-}
-{
-  "products": [
-    // ... არსებული products
   ],
-  "orders": []
+
+  "orders": [
+    {
+      "orderId": 1001,
+      "productId": 1,
+      "quantity": 2,
+      "total": 25.0,
+      "status": "pending"
+    }
+  ]
 }
