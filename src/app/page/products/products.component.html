@@ -1,10 +1,28 @@
 <div class="products-container">
-  <div class="products-grid">
-    @for (product of products; track product.id) {
-      <app-product-card 
-        [product]="product" 
-        (cardClick)="onCardClick($event)">
-      </app-product-card>
-    }
-  </div>
+  <h1 class="page-title">Our Products</h1>
+  
+  @if (searchTerm) {
+    <div class="search-info">
+      <p>Search results for: <strong>"{{ searchTerm }}"</strong></p>
+      <p class="results-count">{{ filteredProducts.length }} product(s) found</p>
+    </div>
+  }
+
+  @if (filteredProducts.length === 0) {
+    <div class="no-results">
+      <p>No products found matching "{{ searchTerm }}"</p>
+      <button class="btn-clear" (click)="searchTerm = ''; filterProducts()">
+        Clear Search
+      </button>
+    </div>
+  } @else {
+    <div class="products-grid">
+      @for (product of filteredProducts; track product.id) {
+        <app-product-card 
+          [product]="product" 
+          (cardClick)="onCardClick($event)">
+        </app-product-card>
+      }
+    </div>
+  }
 </div>

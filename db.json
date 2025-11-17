@@ -144,4 +144,11 @@
       "stock": 25
     }
   ]
+  
+}
+{
+  "products": [
+    // ... არსებული products
+  ],
+  "orders": []
 }
