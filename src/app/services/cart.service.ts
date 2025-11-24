@@ -1,29 +1,4 @@
 
-// import { Injectable, signal } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class CartService {
-//   cartItems = signal<any[]>([]);
-  
-//   get cartCount() {
-//     return this.cartItems().length;
-//   }
-
-//   addToCart(product: any) {
-//     this.cartItems.update(items => [...items, product]);
-//   }
-
-//   removeFromCart(productId: number) {
-//     this.cartItems.update(items => items.filter(item => item.id !== productId));
-//   }
-
-//   clearCart() {
-//     this.cartItems.set([]);
-//   }
-// }
-
 import { Injectable, signal, computed } from '@angular/core';
 import { Iproduct } from '../models/product.model';
 
